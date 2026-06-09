@@ -1,0 +1,60 @@
+{
+  "$schema": "https://biomejs.dev/schemas/1.8.3/schema.json",
+  "files": {
+    "ignore": [
+      "node_modules/**",
+      ".next/**",
+      "out/**",
+      "dist/**",
+      "build/**",
+      "public/**",
+      "coverage/**",
+      "**/*.d.ts"
+    ]
+  },
+  "organizeImports": {
+    "enabled": true
+  },
+  "formatter": {
+    "enabled": true,
+    "formatWithErrors": false,
+    "indentStyle": "space",
+    "indentWidth": 2,
+    "lineEnding": "lf",
+    "lineWidth": 100
+  },
+  "javascript": {
+    "formatter": {
+      "arrowParentheses": "asNeeded",
+      "quoteStyle": "single",
+      "jsxQuoteStyle": "double",
+      "trailingCommas": "es5"
+    }
+  },
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "recommended": true,
+      "correctness": {
+        "useExhaustiveDependencies": "warn",
+        "useHookAtTopLevel": "error",
+        "useJsxKeyInIterable": "error"
+      },
+      "style": {
+        "noVar": "error",
+        "useConst": "error",
+        "useTemplate": "error",
+        "noNonNullAssertion": "error",
+        "useImportType": "error",
+        "useSelfClosingElements": "error"
+      },
+      "suspicious": {
+        "noConsole": "error",
+        "noDebugger": "warn",
+        "noDoubleEquals": "error",
+        "noExplicitAny": "error",
+        "noEmptyBlockStatements": "warn"
+      }
+    }
+  }
+}
