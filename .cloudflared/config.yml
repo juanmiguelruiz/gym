@@ -1,0 +1,7 @@
+tunnel: 98aabd6b-2547-4794-a0b3-bcd612599933
+credentials-file: /Users/juanmi/.cloudflared/98aabd6b-2547-4794-a0b3-bcd612599933.json
+
+ingress:
+  - hostname: gym.juanmiguelruizpazos.com
+    service: http://localhost:3000
+  - service: http_status:404

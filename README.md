@@ -1,36 +1,50 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# gym
 
-## Getting Started
+Base de una webapp con Next.js, TypeScript, Tailwind CSS y pnpm.
 
-First, run the development server:
+## Requisitos
+
+- Node.js 26.8.1 (última release estable), usando `.nvmrc`.
+- pnpm 11.4.0.
+
+Con `nvm`:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+nvm install
+nvm use
+corepack enable
+corepack prepare pnpm@11.4.0 --activate
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Desarrollo
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+pnpm install
+pnpm dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+La aplicación queda disponible en <http://localhost:3000>.
 
-## Learn More
+Para trabajar desde otra máquina o mediante el navegador remoto de Codex:
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+pnpm dev:remote
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Este script escucha en `0.0.0.0` y usa el puerto indicado por `PORT` (3000 por defecto). El acceso remoto debe hacerse mediante el mecanismo de forwarding/túnel de la máquina o entorno de desarrollo; no se publica directamente en Internet.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Ejemplo de forwarding SSH desde tu equipo:
 
-## Deploy on Vercel
+```bash
+ssh -L 3000:localhost:3000 usuario@servidor
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Después abre <http://localhost:3000> en tu navegador. Los cambios guardados en el repositorio se reflejan automáticamente gracias a Fast Refresh.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Comandos útiles
+
+```bash
+pnpm lint       # Comprueba el código
+pnpm build      # Genera la build de producción
+pnpm start:remote
+```
